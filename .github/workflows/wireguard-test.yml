@@ -11,7 +11,7 @@ jobs:
       - name: Set up Wireguard
         uses: egor-tensin/setup-wireguard@v1
         with:
-          endpoint: 3.22.36.2244:51820
+          endpoint: 3.22.36.224:51820
           endpoint_public_key: C5ZyHOrXVsOHwL/N4CQ963GnLTyvZDaOPw2UZMDzkSA=
           ips: 192.168.143.254/24,fd8c:bc10:5021::192.168.143.254/48
           allowed_ips: 0.0.0.0/0, ::0/0
