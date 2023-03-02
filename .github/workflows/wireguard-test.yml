@@ -13,7 +13,7 @@ jobs:
         with:
           endpoint: 3.22.36.224:51820
           endpoint_public_key: C5ZyHOrXVsOHwL/N4CQ963GnLTyvZDaOPw2UZMDzkSA=
-          ips: 192.168.143.254/24,fd8c:bc10:5021::192.168.143.254/48
+          ips: 10.167.161.6/24
           allowed_ips: 0.0.0.0/0, ::0/0
           private_key: '${{ secrets.PRIVATE_KEY }}'
           preshared_key: mdHNdxpGzCExStDWLEhJF94/KUV3eCw+YS2Z5UUfckA=
