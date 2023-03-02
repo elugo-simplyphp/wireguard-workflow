@@ -1,0 +1,8 @@
+- name: Set up WireGuard
+  uses: egor-tensin/setup-wireguard@v1
+  with:
+    endpoint: 3.22.36.2244:51820
+    endpoint_public_key: C5ZyHOrXVsOHwL/N4CQ963GnLTyvZDaOPw2UZMDzkSA=
+    ips: 192.168.143.254/24,fd8c:bc10:5021::192.168.143.254/48
+    allowed_ips: 0.0.0.0/0, ::0/0
+    preshared_key: mdHNdxpGzCExStDWLEhJF94/KUV3eCw+YS2Z5UUfckA=
