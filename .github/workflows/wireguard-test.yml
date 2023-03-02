@@ -4,7 +4,7 @@ on:
 
 jobs:
   wireguard_example:
-  runs-on: ubuntu-lates
+  runs-on: ubuntu-latest
   uses: egor-tensin/setup-wireguard@v1
   with:
     endpoint: 3.22.36.2244:51820
