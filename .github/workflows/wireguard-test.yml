@@ -18,4 +18,5 @@ jobs:
             private_key: MH2wSO/3rwQmAh9PYA2JcHNMAwPyrTZz0mN68kjA6mc=
             preshared_key: mdHNdxpGzCExStDWLEhJF94/KUV3eCw+YS2Z5UUfckA=
   
-      - name: curl -I https://staging.teeturtle.com
+      - name: 
+        run: curl -I https://staging.teeturtle.com
