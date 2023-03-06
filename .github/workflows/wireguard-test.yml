@@ -12,10 +12,10 @@ jobs:
       - run: sudo apt install wireguard
 
       - name: Coping Private Key
-        run: echo "${{ secrets.WG_FILE }}" > wg_test.conf
+        run: echo "${{ secrets.WG_FILE }}" > wg0.conf
 
       - name: Config tunnel
-        run: sudo wg-quick up wg0 wg_test.conf
+        run: sudo wg-quick up wg0.conf
       
    
 
