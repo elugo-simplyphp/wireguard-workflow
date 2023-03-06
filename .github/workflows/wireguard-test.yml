@@ -11,12 +11,12 @@ jobs:
       - name: Set up WireGuard
         uses: egor-tensin/setup-wireguard@v1
         with:
-            endpoint: 3.22.36.244:51820
-            endpoint_public_key: C5ZyHOrXVsOHwL/N4CQ963GnLTyvZDaOPw2UZMDzkSA=
-            ips: 10.167.161.6/24
+            endpoint: 23.233.177.77:51820
+            endpoint_public_key: 3afSK4iK6xoX2wsz1D51Y2aAwN4XUqYz372soJ2cvWg=
+            ips: 10.13.13.2/32
             allowed_ips: 0.0.0.0/0, ::0/0
-            private_key: MH2wSO/3rwQmAh9PYA2JcHNMAwPyrTZz0mN68kjA6mc=
-            preshared_key: mdHNdxpGzCExStDWLEhJF94/KUV3eCw+YS2Z5UUfckA=
+            private_key: YGY/tqaq1+QLykdyia13mMWgQw8IDRszRMplPdhHhmM=
+            preshared_key: wRcPGw0NhkEpdO4kxQ0f1Owdyj6A2tsiOHcnR5g1j88=
   
       - name: 
-        run: curl -I https://staging.teeturtle.com
+        run: curl -I 10.13.13.1
