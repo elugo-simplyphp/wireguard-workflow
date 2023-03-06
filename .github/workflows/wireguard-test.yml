@@ -14,7 +14,7 @@ jobs:
       - name: Coping Private Key
         env:
           wg_config: ${{ secrets.WG_FILE}}
-        run: echo privatekey > ./wg_test.conf
+        run: echo wg_config > ./wg_test.conf
 
       - name: Config tunnel
         run: wg setconf wg0 wg_test.conf
