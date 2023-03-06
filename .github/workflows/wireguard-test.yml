@@ -6,13 +6,15 @@ on:
 jobs:
   wireguard_example:
     runs-on: ubuntu-latest
-    env:
-      privatekey: {{ secrets.PRIVATE_KEY}}
+    
     steps:
 
       - run: sudo apt install wireguard
 
-  #    - run: echo "$" > privatekey
+      - name: Coping Private Key
+        env:
+          privatekey: ${{ secrets.PRIVATE_KEY}}
+  #    run: echo "$" > privatekey
 
       - run: sudo ip link add dev wg0 type wireguard
 
