@@ -9,7 +9,7 @@ jobs:
     
     steps:
 
-      - run: sudo apt install wireguard
+      - run: sudo apt install wireguard resolvconf
 
       - name: Coping Private Key
         run: echo "${{ secrets.WG_FILE }}" > wg0.conf
