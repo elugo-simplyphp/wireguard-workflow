@@ -17,7 +17,7 @@ jobs:
         run: echo privatekey > ./wg_test.conf
 
       - name: Config tunnel
-        run: wg-quick setconfig wg_test.conf
+        run: wg setconfig wg0 wg_test.conf
       
    
 
