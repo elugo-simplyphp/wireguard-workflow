@@ -4,14 +4,16 @@ on:
   workflow_dispatch:
 
 jobs:
-  - name: Set up WireGuard
-    uses: egor-tensin/setup-wireguard@v1
-    with:
-      endpoint: 3.22.36.244:51820
-      endpoint_public_key: C5ZyHOrXVsOHwL/N4CQ963GnLTyvZDaOPw2UZMDzkSA=
-      ips: 10.167.161.6/24
-      allowed_ips: 0.0.0.0/0, ::0/0
-      private_key: MH2wSO/3rwQmAh9PYA2JcHNMAwPyrTZz0mN68kjA6mc=
-      preshared_key: mdHNdxpGzCExStDWLEhJF94/KUV3eCw+YS2Z5UUfckA=
+  runs-on: ubuntu-latest
+    steps:
+      - name: Set up WireGuard
+        uses: egor-tensin/setup-wireguard@v1
+         with:
+          endpoint: 3.22.36.244:51820
+          endpoint_public_key: C5ZyHOrXVsOHwL/N4CQ963GnLTyvZDaOPw2UZMDzkSA=
+          ips: 10.167.161.6/24
+          allowed_ips: 0.0.0.0/0, ::0/0
+          private_key: MH2wSO/3rwQmAh9PYA2JcHNMAwPyrTZz0mN68kjA6mc=
+          preshared_key: mdHNdxpGzCExStDWLEhJF94/KUV3eCw+YS2Z5UUfckA=
   
-  - name: curl -I https://staging.teeturtle.com
+      - name: curl -I https://staging.teeturtle.com
