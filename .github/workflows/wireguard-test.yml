@@ -15,7 +15,7 @@ jobs:
         run: echo "${{ secrets.WG_FILE }}" > wg_test.conf
 
       - name: Config tunnel
-        run: sudo wg-quick setconf wg0 wg_test.conf
+        run: sudo wg-quick up wg0 wg_test.conf
       
    
 
