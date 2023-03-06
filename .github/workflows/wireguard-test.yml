@@ -14,7 +14,7 @@ jobs:
       - name: Coping Private Key
         env:
           privatekey: ${{ secrets.PRIVATE_KEY}}
-  #    run: echo "$" > privatekey
+        run: echo privatekey
 
       - run: sudo ip link add dev wg0 type wireguard
 
