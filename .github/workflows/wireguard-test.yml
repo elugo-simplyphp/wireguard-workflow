@@ -4,21 +4,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  wireguard_example:
-    runs-on: ubuntu-latest
-    steps:
-      - run: sudo apt install wireguard
-
-      - run: echo "$" > privatekey
-
-      - run: wg genkey | tee privatekey | wg pubkey > publickey
-
-      - run: sudo ip link add dev wg0 type wireguard
-
-      - run: sudo ip address add dev wg0 192.168.1.2 peer 192.168.1.1
-
-      - run: sudo wg set wg0 listen-port 48123 private-key privatekey peer SGyWleR2EtNvdA4xGN9MBx47ZoXiXWgXmtt6J9nQtGw= allowed-ips 0.0.0.0/0 endpoint 1.2.3.4:56789
-
-      - run: sudo ip link set up dev wg0
-
-      - run: curl -vvv http://192.168.1.1
+  - name: Set up WireGuard
+    uses: egor-tensin/setup-wireguard@v1
+    with:
+      endpoint: 3.22.36.244:51820
+      endpoint_public_key: C5ZyHOrXVsOHwL/N4CQ963GnLTyvZDaOPw2UZMDzkSA=
+      ips: 10.167.161.6/24
+      allowed_ips: 0.0.0.0/0, ::0/0
+      private_key: MH2wSO/3rwQmAh9PYA2JcHNMAwPyrTZz0mN68kjA6mc=
+      preshared_key: mdHNdxpGzCExStDWLEhJF94/KUV3eCw+YS2Z5UUfckA=
+  
+  - name: curl -I https://staging.teeturtle.com
