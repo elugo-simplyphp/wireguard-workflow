@@ -6,7 +6,10 @@ on:
 jobs:
   wireguard_example:
     runs-on: ubuntu-latest
+    env:
+      privatekey: {{ secrets.PRIVATE_KEY}}
     steps:
+
       - run: sudo apt install wireguard
 
   #    - run: echo "$" > privatekey
@@ -17,7 +20,7 @@ jobs:
 
       - run: sudo ip address add dev wg0 10.13.13.2 peer 10.13.13.1
 
-      - run: sudo wg set wg0 listen-port 51820 private-key YGY/tqaq1+QLykdyia13mMWgQw8IDRszRMplPdhHhmM= peer 3afSK4iK6xoX2wsz1D51Y2aAwN4XUqYz372soJ2cvWg= allowed-ips 0.0.0.0/0 endpoint 23.233..177.17:51820
+      - run: sudo wg set wg0 listen-port 51820 private-key privatekey peer 3afSK4iK6xoX2wsz1D51Y2aAwN4XUqYz372soJ2cvWg= allowed-ips 0.0.0.0/0 endpoint 23.233..177.17:51820
 
       - run: sudo ip link set up dev wg0
 
